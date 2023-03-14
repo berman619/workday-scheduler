@@ -1,4 +1,4 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
+$(document).ready(// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
@@ -20,4 +20,5 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-});
+})
+);
