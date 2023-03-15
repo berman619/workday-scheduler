@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // Save button click event
+    // click event for save
     $(".saveBtn").on("click", function () {
       var time = $(this).parent().attr("id");
       var input = $(this).siblings(".description").val();
@@ -8,7 +8,7 @@ $(document).ready(function () {
   
     var hour = dayjs().hour();
   
-    // Add past, present, or future class to each time block
+    // adding past/present/future classes to time blocks 
     $(".timeblock").each(function () {
       var timeBlock = parseInt($(this).attr("id").split("-")[1]);
       if (timeBlock < hour) {
@@ -22,14 +22,14 @@ $(document).ready(function () {
       }
     });
   
-    // Get user input from localStorage and set textarea values
+    // displaying user input from local storage in textarea
     $(".timeblock").each(function () {
       var timeBlock = $(this);
       var id = timeBlock.attr("id");
       timeBlock.children("textarea").val(localStorage.getItem(id));
     });
   
-    // Display the current date in the header
+    // displaying the current day and date in the header
     var currentDay = dayjs();
-    $("#currentDay").text(currentDay.format("MMM D, YYYY"));
+    $("#currentDay").text(currentDay.format("dddd, MMMM D, YYYY"));
   })
